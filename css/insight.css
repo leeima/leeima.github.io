@@ -132,3 +132,6 @@
 .ins-section .ins-search-item.active .ins-search-preview {
   color: #fff !important;
 }
+.post-count {
+  font-size: 100%;
+}

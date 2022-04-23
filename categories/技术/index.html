@@ -33,8 +33,8 @@
   mashiro_option.email_name = "";
   mashiro_option.cookie_version_control = "";
   mashiro_option.qzone_autocomplete = false;
-  mashiro_option.site_name = "Autumn's";
-  mashiro_option.author_name = "";
+  mashiro_option.site_name = "Autumn'sLee";
+  mashiro_option.author_name = "Lee";
   mashiro_option.site_url = "https://leeima.github.io";
   mashiro_option.v_appId = "GyC3NzMvd0hT9Yyd2hYIC0MN-gzGzoHsz";
   mashiro_option.v_appKey = "mgOpfzbkHYqU92CV4IDlAUHQ";
@@ -168,7 +168,7 @@
         <span class="logolink moe-mashiro">
           <a href="/">
             <span class="sakurasono">Autumn&#39;s</span>
-            <span class="shironeko"></span>
+            <span class="shironeko">Lee</span>
           </a>
         </span>
       </span>
@@ -528,14 +528,40 @@
       </div>
       <p style="color: #666666;">&copy 2021-2022 leeima</p>
     </div>
-    <script>
-      var birthDay = new Date("02/20/2021");  // 这里填写网站第一次运行日期
-      var now = new Date();
-      var duration = now.getTime() - birthDay.getTime();
-      var total = Math.floor(duration / (1000 * 60 * 60 * 24));
-      document.getElementById("showDays").innerHTML = "我跟倩倩在一起已经" + total + "天了"; //这里就是总运行天数
-    </script>
-    <span class="post-count">本站已有 2.6k 中国字。
+    
+    <span class="post-count">本站已有 2.6k 字
+        <!--《添加网站运行时间 -->
+<!--<br/>-->
+<span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
+<script>
+    var now = new Date();
+
+    function createtime() {
+        var grt = new Date("02/20/2021 12:00:00"); //此处修改你的建站时间或者网站上线时间 
+        now.setTime(now.getTime() + 250);
+        days = (now - grt) / 1000 / 60 / 60 / 24;
+        dnum = Math.floor(days);
+        hours = (now - grt) / 1000 / 60 / 60 - (24 * dnum);
+        hnum = Math.floor(hours);
+        if (String(hnum).length == 1) {
+            hnum = "0" + hnum;
+        }
+        minutes = (now - grt) / 1000 / 60 - (24 * 60 * dnum) - (60 * hnum);
+        mnum = Math.floor(minutes);
+        if (String(mnum).length == 1) {
+            mnum = "0" + mnum;
+        }
+        seconds = (now - grt) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+        snum = Math.round(seconds);
+        if (String(snum).length == 1) {
+            snum = "0" + snum;
+        }
+        document.getElementById("timeDate").innerHTML = " | 我跟秋天在一起已经 " + dnum + " 天 ";
+        document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒了";
+    }
+    setInterval("createtime()", 250);
+</script>
+<!-- 添加网站运行时间》 -->
 </span>
     <div class="footer-device">
     <p style="font-family: 'Ubuntu', sans-serif;">
@@ -544,6 +570,7 @@
       </p>
     </div>
   </div><!-- .site-info -->
+
 </footer>
 
 
@@ -625,7 +652,7 @@ $(document).ready(function() {
   <div class="m-avatar">
     <img src="https://cdn.jsdelivr.net/gh/leeima/cdn/img/custom/avatar.jpg">
   </div>
-  <p style="text-align: center; color: #333; font-weight: 900; font-family: 'Ubuntu', sans-serif; letter-spacing: 1.5px">Autumn's</p>
+  <p style="text-align: center; color: #333; font-weight: 900; font-family: 'Ubuntu', sans-serif; letter-spacing: 1.5px">Autumn'sLee</p>
   <p style="text-align: center; word-spacing: 20px;">
     
       
