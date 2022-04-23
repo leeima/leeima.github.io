@@ -826,8 +826,15 @@ links:
       </div>
       <p style="color: #666666;">&copy 2021-2022 leeima</p>
     </div>
-    <span class="post-count">本站已有 2.6k 字。
-    </span>
+    <script>
+      var birthDay = new Date("02/20/2021");  // 这里填写网站第一次运行日期
+      var now = new Date();
+      var duration = now.getTime() - birthDay.getTime();
+      var total = Math.floor(duration / (1000 * 60 * 60 * 24));
+      document.getElementById("showDays").innerHTML = "我跟倩倩在一起已经" + total + "天了"; //这里就是总运行天数
+    </script>
+    <span class="post-count">本站已有 2.6k 中国字。
+</span>
     <div class="footer-device">
     <p style="font-family: 'Ubuntu', sans-serif;">
         <span style="color: #b9b9b9;">Theme <a href="https://github.com/honjun/hexo-theme-sakura" target="_blank" style="color: #b9b9b9;;text-decoration: underline dotted rgba(0, 0, 0, .1);">Sakura</a> <i class="iconfont icon-sakura rotating" style="color: #ffc0cb;display:inline-block"></i> by <a href="https://2heng.xin/" target="_blank" style="color: #b9b9b9;;text-decoration: underline dotted rgba(0, 0, 0, .1);">Mashiro</a>&<a href="https://www.hojun.cn/" target="_blank" style="color: #b9b9b9;;text-decoration: underline dotted rgba(0, 0, 0, .1);">Hojun</a>, Powered by Hexo, Hosted by Coding Pages</a>
