@@ -7835,3 +7835,6 @@ td.hljs-ln-numbers {
 @media(max-width:1200px) {
     .toc {display: none;}
 }
+
+.post-count {
+    font-size: 85%; }

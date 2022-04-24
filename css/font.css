@@ -145,3 +145,5 @@
 
 .icon-Hearthstone:before { content: "\e6b9"; }
 
+.post-count {
+  font-size: 85%; }
