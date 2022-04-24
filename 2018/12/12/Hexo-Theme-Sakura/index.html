@@ -69,6 +69,178 @@
     
     
     
+    <!-- https://www.bilibili.com/video/BV1wF411G7qw -->
+<!-- Thinks! -->
+
+<script>
+  // 获取 css 标签
+  var divEle = document.querySelector('div');
+  var divSty = window.getComputedStyle(divEle);
+  var divEleVal = divSty.getPropertyValue(':root');
+  // 设置变量值
+  document.documentElement.style.setProperty('--animation-delay', "3s");
+</script>
+<style>
+  :root {
+    --animation-delay: 2s;
+    --border-color: #fff
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+  }
+
+  #bg {
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* 渐变背景 */
+    background-image: radial-gradient(ellipse at center, #cfd9df 0%, #e2ebf0 200%);
+  }
+
+  #loader {
+    width: 200px;
+    height: 200px;
+    /* 相对定位 */
+    position: relative;
+    transform: scale(1.3);
+  }
+
+  #loader div {
+    border-width: 5px;
+    border-style: solid;
+    border-left-color: var(--border-color);
+    border-right-color: var(--border-color);
+    border-top-color: transparent;
+    border-bottom-color: transparent;
+    border-radius: 50%;
+    /* 绝对定位 */
+    position: absolute;
+    /* 执行动画：动画名 时长 慢速开始然后变快然后慢速结束 无限次播放 */
+    animation: spin 2s ease infinite;
+  }
+
+  /* 为每一个圆环设置大小、定位、动画延迟时间 */
+  #loader div:nth-child(1) {
+    width: 50px;
+    height: 50px;
+    left: 70px;
+    top: 70px;
+  }
+
+  #loader div:nth-child(2) {
+    width: 70px;
+    height: 70px;
+    left: 60px;
+    top: 60px;
+    /* 动画延迟时间 */
+    animation-delay: 0.1s;
+  }
+
+  #loader div:nth-child(3) {
+    width: 90px;
+    height: 90px;
+    left: 50px;
+    top: 50px;
+    animation-delay: 0.2s;
+  }
+
+  #loader div:nth-child(4) {
+    width: 110px;
+    height: 110px;
+    left: 40px;
+    top: 40px;
+    animation-delay: 0.3s;
+  }
+
+  /* 定义动画 */
+  @keyframes spin {
+    50% {
+      transform: rotate(180deg);
+    }
+
+    100% {
+      transform: rotate(0);
+    }
+  }
+
+  /* 消失动画 */
+  #bg {
+    animation: disappear var(--animation-delay) ease-in-out 1;
+  }
+
+  @keyframes disappear {
+    0% {
+      opacity: 1;
+    }
+
+    10% {
+      opacity: .9;
+    }
+
+    20% {
+      opacity: .8;
+    }
+
+    30% {
+      opacity: .7;
+    }
+
+    40% {
+      opacity: .6;
+    }
+
+    50% {
+      opacity: .5;
+    }
+
+    60% {
+      opacity: .4;
+    }
+
+    70% {
+      opacity: .3;
+    }
+
+    80% {
+      opacity: .2;
+    }
+
+    90% {
+      opacity: .1;
+    }
+
+    100% {
+      opacity: 0;
+    }
+  }
+</style>
+<div id="bg">
+  <div id="loader">
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+</div>
+<script>
+  const loaded = function () {
+    setTimeout(function () {
+      const bg = document.getElementById("bg");
+      const loader = document.getElementById("loader");
+      bg.className = "disappear"; // 使用渐隐的方法淡出 loading page
+      loader.className = "disappear"; // 使用渐隐的方法淡出 loading page
+      loader.style.display = "none"; // 去除加载动画
+      bg.style.display = "none"; // 去除加载页背景
+    }, "3000"); // 强制显示 loading page 时间
+  };
+  loaded();
+</script>
+    
     
   <div class="scrollbar" id="bar">
   </div>
