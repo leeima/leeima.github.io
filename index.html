@@ -78,7 +78,7 @@
   var divSty = window.getComputedStyle(divEle);
   var divEleVal = divSty.getPropertyValue(':root');
   // 设置变量值
-  document.documentElement.style.setProperty('--animation-delay', "2s");
+  document.documentElement.style.setProperty('--animation-delay', "1s");
 </script>
 <style>
   :root {
@@ -236,7 +236,7 @@
       loader.className = "disappear"; // 使用渐隐的方法淡出 loading page
       loader.style.display = "none"; // 去除加载动画
       bg.style.display = "none"; // 去除加载页背景
-    }, "2000"); // 强制显示 loading page 时间
+    }, "1000"); // 强制显示 loading page 时间
   };
   loaded();
 </script>
