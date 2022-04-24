@@ -64,12 +64,7 @@
 <body class="page-template page-template-user page-template-page-analytics page-template-userpage-analytics-php page page-id-1297 chinese-font serif isWebKit">
   <body>
     
-    
-    
-    
-    
-    
-    <!-- https://www.bilibili.com/video/BV1wF411G7qw -->
+    <!-- Copyright (c) 2022 by Pawel (https://codepen.io/pawelqcm/pen/dMqrqd) -->
 <!-- Thinks! -->
 
 <script>
@@ -78,101 +73,134 @@
   var divSty = window.getComputedStyle(divEle);
   var divEleVal = divSty.getPropertyValue(':root');
   // 设置变量值
-  document.documentElement.style.setProperty('--animation-delay', "3s");
+  document.documentElement.style.setProperty('--animation-delay', "4s");
 </script>
 <style>
   :root {
     --animation-delay: 2s;
-    --border-color: #fff
   }
 
   * {
-    margin: 0;
-    padding: 0;
+    box-sizing: border-box;
   }
 
   #bg {
     position: fixed;
-    height: 100vh;
-    width: 100vw;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    /* 渐变背景 */
-    background-image: radial-gradient(ellipse at center, #cfd9df 0%, #e2ebf0 200%);
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    /* background: #404456 !important; */
+    /* background-image: linear-gradient(to top, #a6b9c4 0%, #d3dde2 100%); */
+    background: radial-gradient(circle at center, #d3dde2 0%, #a6b9c4 200%);
+    z-index: 999;
   }
 
   #loader {
-    width: 200px;
-    height: 200px;
-    /* 相对定位 */
-    position: relative;
-    transform: scale(1.3);
+    position: fixed;
+    width: 10em;
+    height: 10em;
+    top: calc(50% - 5em);
+    left: calc(50% - 5em);
+    /* background-color: #404456; */
   }
 
-  #loader div {
-    border-width: 5px;
-    border-style: solid;
-    border-left-color: var(--border-color);
-    border-right-color: var(--border-color);
-    border-top-color: transparent;
-    border-bottom-color: transparent;
-    border-radius: 50%;
-    /* 绝对定位 */
+  /* 两端有圆角 */
+  .hill {
     position: absolute;
-    /* 执行动画：动画名 时长 慢速开始然后变快然后慢速结束 无限次播放 */
-    animation: spin 2s ease infinite;
+    width: 14em;
+    height: 0em;
+    top: 100%;
+    left: 0;
+    background-color: #000;
+    border: .25em solid #f5f5f5;
+    border-radius: 10px;
+    transform: rotate(-45deg);
+    transform-origin: top left;
+    z-index: 1000;
   }
 
-  /* 为每一个圆环设置大小、定位、动画延迟时间 */
-  #loader div:nth-child(1) {
-    width: 50px;
-    height: 50px;
-    left: 70px;
-    top: 70px;
+  /* 两端无圆角 */
+  /* .hill {
+      position: absolute;
+      width: 14em;
+      height: 5em;
+      top: 100%;
+      left: 0;
+      background-color: transparent;
+      border-top: .5em solid whitesmoke;
+      transform: rotate(-45deg);
+      transform-origin: top left;
+    } */
+
+  .box {
+    position: absolute;
+    left: 0;
+    bottom: -.6em;
+    width: 2em;
+    height: 2em;
+    background-color: transparent;
+    border: .45em solid whitesmoke;
+    border-radius: 15%;
+    transform: translate(0, -2em) rotate(-45deg);
+    /* 动画 */
+    animation: push 2.5s cubic-bezier(.79, 0, .47, .97) infinite;
+    z-index: 1000;
   }
 
-  #loader div:nth-child(2) {
-    width: 70px;
-    height: 70px;
-    left: 60px;
-    top: 60px;
-    /* 动画延迟时间 */
-    animation-delay: 0.1s;
-  }
-
-  #loader div:nth-child(3) {
-    width: 90px;
-    height: 90px;
-    left: 50px;
-    top: 50px;
-    animation-delay: 0.2s;
-  }
-
-  #loader div:nth-child(4) {
-    width: 110px;
-    height: 110px;
-    left: 40px;
-    top: 40px;
-    animation-delay: 0.3s;
-  }
-
-  /* 定义动画 */
-  @keyframes spin {
-    50% {
-      transform: rotate(180deg);
-    }
-
-    100% {
-      transform: rotate(0);
-    }
-  }
-
-  /* 消失动画 */
-  #bg {
+  #bg,
+  #loader {
+    /* 消失动画 */
     animation: disappear var(--animation-delay) ease-in-out 1;
   }
 
+  /* 小方块向上爬 */
+  @keyframes push {
+    0% {
+      transform: translate(0, -2em) rotate(-45deg);
+    }
+
+    5% {
+      transform: translate(0, -2em) rotate(-50deg);
+    }
+
+    20% {
+      transform: translate(2em, -4em) rotate(45deg);
+    }
+
+    25% {
+      transform: translate(2em, -4em) rotate(40deg);
+    }
+
+    40% {
+      transform: translate(4em, -6em) rotate(135deg);
+    }
+
+    45% {
+      transform: translate(4em, -6em) rotate(130deg);
+    }
+
+    60% {
+      transform: translate(6em, -8em) rotate(225deg);
+    }
+
+    65% {
+      transform: translate(6em, -8em) rotate(220deg);
+    }
+
+    /* 80% {
+        transform: translate(8em, -10em) rotate(315deg);
+      }
+
+      85% {
+        transform: translate(8em, -10em) rotate(310deg);
+      } */
+
+    100% {
+      transform: translate(0, -2em) rotate(-225deg);
+    }
+  }
+
+  /* 加载页消动画 */
   @keyframes disappear {
     0% {
       opacity: 1;
@@ -221,10 +249,8 @@
 </style>
 <div id="bg">
   <div id="loader">
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
+    <div class="box"></div>
+    <div class="hill"></div>
   </div>
 </div>
 <script>
@@ -236,10 +262,15 @@
       loader.className = "disappear"; // 使用渐隐的方法淡出 loading page
       loader.style.display = "none"; // 去除加载动画
       bg.style.display = "none"; // 去除加载页背景
-    }, "3000"); // 强制显示 loading page 时间
+    }, "4000"); // 强制显示 loading page 时间
   };
   loaded();
 </script>
+    
+    
+    
+    
+    
     
     
   <div class="scrollbar" id="bar">
