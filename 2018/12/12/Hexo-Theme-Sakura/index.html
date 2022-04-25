@@ -563,43 +563,21 @@
   </div>
 </header>
 
-      <link rel="stylesheet" type="text/css" href="/css/sharejs.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css">
-<div class="pattern-center-blank"></div>
-
-  <div class="pattern-center single-center">
-    <!-- 有配图默认渲染第一张 -->
-    <div class="pattern-attachment-img lazyload" style="background-image: url(https://static.2heng.xin/wp-content/uploads//2019/02/wallhaven-672007-1-1024x576.png);" src="https://cdn.jsdelivr.net/gh/leeima/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://static.2heng.xin/wp-content/uploads//2019/02/wallhaven-672007-1-1024x576.png">
+        <div class="pattern-center-blank"></div>
+  
+    <div class="pattern-center ">
+      <div class="pattern-attachment-img">
+        <img src="https://cdn.jsdelivr.net/gh/leeima/cdn/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://static.2heng.xin/wp-content/uploads//2019/02/wallhaven-672007-1-1024x576.png" class="lazyload" onerror="imgError(this,3)" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;">
+      </div>
+      <header class="pattern-header ">
+        <h1 class="entry-title">
+        Sakura</h1>
+      </header>
     </div>
-    <header class="pattern-header single-header">
-      <h1 class="entry-title">
-      Hexo-Theme-Sakura</h1>
-      <p class="entry-census">
-        <span>
-          <a href="hojun.cn">
-            <img src="https://cdn.jsdelivr.net/gh/leeima/cdn/img/custom/avatar.jpg">
-          </a>
-        </span>
-        <span>
-          <a href="hojun.cn">hojun</a>
-        </span>
-        <span class="bull">
-        ·</span>
-        2018-12-12<span class="bull">
-        ·</span>
-      <span id="busuanzi_value_page_pv"></span>次阅读</p>
-    </header>
-  </div>
-
-<div id="content" class="site-content">
-  <div id="primary" class="content-area">
-    <main id="main" class="site-main" role="main">
-      <article id="post-1" class="post-1 post type-post status-publish format-standard has-post-thumbnail hentry category-uncategorized">
-        <div class="toc"></div>
-        <!--<div class="toc-entry-content"><!-- 套嵌目录使用（主要为了支援评论）-->
-        
-        <div class="entry-content">
-          <p>hexo-theme-sakura主题 <a href="https://github.com/honjun/hexo-theme-sakura/blob/master/README.md" target="_blank" rel="noopener">English document</a></p>
+  
+  <div id="content" class="site-content">
+    <article class="post-item post-301 page type-page status-publish has-post-thumbnail hentry">
+      <p>hexo-theme-sakura主题 <a href="https://github.com/honjun/hexo-theme-sakura/blob/master/README.md" target="_blank" rel="noopener">English document</a></p>
 <p>基于WordPress主题<a href="https://github.com/mashirozx/Sakura/" target="_blank" rel="noopener">Sakura</a>修改成Hexo的主题。</p>
 <p><a href="https://sakura.hojun.cn" target="_blank" rel="noopener">demo预览</a></p>
 <p>正在开发中……</p>
@@ -622,7 +600,7 @@
 <h2 id="1、主题下载安装"><a href="#1、主题下载安装" class="headerlink" title="1、主题下载安装"></a>1、主题下载安装</h2><p><a href="https://github.com/honjun/hexo-theme-sakura" target="_blank" rel="noopener">hexo-theme-sakura</a>建议下载压缩包格式，因为除了主题内容还有些source的配置对新手来说比较太麻烦，直接下载解压就省去这些麻烦咯。</p>
 <p>下载好后解压到博客根目录（不是主题目录哦，重复的选择替换）。接着在命令行（cmd、bash）运行<code>npm i</code>安装依赖。</p>
 <h2 id="2、主题配置"><a href="#2、主题配置" class="headerlink" title="2、主题配置"></a>2、主题配置</h2><h3 id="博客根目录下的-config配置"><a href="#博客根目录下的-config配置" class="headerlink" title="博客根目录下的_config配置"></a>博客根目录下的_config配置</h3><p>站点</p>
-<pre class=" language-yml"><code class="language-yml"># Site
+<pre><code class="yml"># Site
 title: 你的站点名
 subtitle:
 description: 站点简介
@@ -632,7 +610,7 @@ language: zh-cn
 timezone:
 </code></pre>
 <p>部署</p>
-<pre class=" language-yml"><code class="language-yml">deploy:
+<pre><code class="yml">deploy:
   type: git
   repo: 
     github: 你的github仓库地址
@@ -640,7 +618,7 @@ timezone:
   branch: master
 </code></pre>
 <p>备份 （使用hexo b发布备份到远程仓库）</p>
-<pre class=" language-yml"><code class="language-yml">backup:
+<pre><code class="yml">backup:
   type: git
   message: backup my blog of https://honjun.github.io/
   repository:
@@ -650,7 +628,7 @@ timezone:
 
 </code></pre>
 <h3 id="主题目录下的-config配置"><a href="#主题目录下的-config配置" class="headerlink" title="主题目录下的_config配置"></a>主题目录下的_config配置</h3><p>其中标明【改】的是需要修改部门，标明【选】是可改可不改，标明【非】是不用改的部分</p>
-<pre class=" language-yml"><code class="language-yml"># site name
+<pre><code class="yml"># site name
 # 站点名 【改】
 prefixName: さくら荘その
 siteName: hojun
@@ -739,7 +717,7 @@ social:
 msocial:
   github: {url: http://github.com/honjun, fa: fa-github, color: 333}
   weibo: {url: http://weibo.com/mashirozx?is_all=1, fa: fa-weibo, color: dd4b39}
-  qq: {url: https://wpa.qq.com/msgrd?v=3&uin=954655431&site=qq&menu=yes, fa: fa-qq, color: 25c6fe}
+  qq: {url: https://wpa.qq.com/msgrd?v=3&amp;uin=954655431&amp;site=qq&amp;menu=yes, fa: fa-qq, color: 25c6fe}
 
 # 赞赏二维码（其中wechatSQ是赞赏单页面的赞赏码图片）【改】
 donate:
@@ -775,7 +753,7 @@ v_appKey: mgOpfzbkHYqU92CV4IDlAUHQ
 <h2 id="分类页和标签页配置"><a href="#分类页和标签页配置" class="headerlink" title="分类页和标签页配置"></a>分类页和标签页配置</h2><h3 id="分类页"><a href="#分类页" class="headerlink" title="分类页"></a>分类页</h3><p><img src="https://ws3.sinaimg.cn/large/006bYVyvly1g07b0gucy9j31060jih76.jpg" alt></p>
 <h3 id="标签页"><a href="#标签页" class="headerlink" title="标签页"></a>标签页</h3><p><img src="https://wx2.sinaimg.cn/large/006bYVyvly1g07azb2399j31040jgazs.jpg" alt></p>
 <p>配置项在\themes\Sakura\languages\zh-cn.yml里。新增一个分类或标签最好加下哦，当然嫌麻烦可以直接使用一张默认图片（可以改主题或者直接把404图片替换下，征求下意见要不要给这个在配置文件中加个开关，可以issue或群里提出来），现在是没设置的话会使用那种倒立小狗404哦。</p>
-<pre class=" language-yml"><code class="language-yml">#category
+<pre><code class="yml">#category
 # 按分类名创建
 技术:
     #中文标题
@@ -796,7 +774,7 @@ v_appKey: mgOpfzbkHYqU92CV4IDlAUHQ
     img: https://cdn.jsdelivr.net/gh/leeima/cdn/img/banner/reading.jpg
 </code></pre>
 <h2 id="单页面封面配置"><a href="#单页面封面配置" class="headerlink" title="单页面封面配置"></a>单页面封面配置</h2><p><img src="https://ws3.sinaimg.cn/large/006bYVyvly1g07b1pi619j31080jge4u.jpg" alt><br>如留言板页面页面，位于source下的comment下，打开index.md如下：</p>
-<pre class=" language-md"><code class="language-md">---
+<pre><code class="md">---
 title: comment
 date: 2018-12-20 23:13:48
 keywords: 留言板
@@ -807,7 +785,7 @@ photos: https://cdn.jsdelivr.net/gh/leeima/cdn/img/banner/comment.jpg
 ---
 </code></pre>
 <h2 id="单页面配置"><a href="#单页面配置" class="headerlink" title="单页面配置"></a>单页面配置</h2><h3 id="番组计划页-（请直接在下载后的文件中改，下面的添加了注释可能会有些影响）"><a href="#番组计划页-（请直接在下载后的文件中改，下面的添加了注释可能会有些影响）" class="headerlink" title="番组计划页 （请直接在下载后的文件中改，下面的添加了注释可能会有些影响）"></a>番组计划页 （请直接在下载后的文件中改，下面的添加了注释可能会有些影响）</h3><p><img src="https://wx2.sinaimg.cn/large/006bYVyvly1g07b2gyx60j31090jjahj.jpg" alt></p>
-<pre class=" language-yml"><code class="language-yml">---
+<pre><code class="yml">---
 layout: bangumi
 title: bangumi
 comments: false
@@ -839,7 +817,7 @@ bangumis:
 ---
 </code></pre>
 <h3 id="友链页-（请直接在下载后的文件中改，下面的添加了注释可能会有些影响）"><a href="#友链页-（请直接在下载后的文件中改，下面的添加了注释可能会有些影响）" class="headerlink" title="友链页 （请直接在下载后的文件中改，下面的添加了注释可能会有些影响）"></a>友链页 （请直接在下载后的文件中改，下面的添加了注释可能会有些影响）</h3><p><img src="https://ws3.sinaimg.cn/large/006bYVyvly1g07b39tleej31080jhjv1.jpg" alt></p>
-<pre class=" language-yml"><code class="language-yml">---
+<pre><code class="yml">---
 layout: links
 title: links
 # 创建日期，可以改下
@@ -856,7 +834,7 @@ links:
   # 类型分组
   - group: 个人项目
     # 类型简介
-    desc: 充分说明这家伙是条咸鱼 < (￣︶￣)>
+    desc: 充分说明这家伙是条咸鱼 &lt; (￣︶￣)&gt;
     items:
     # 友链链接
     - url: https://shino.cc/fgvf
@@ -885,44 +863,16 @@ links:
 ---
 </code></pre>
 <h2 id="写文章配置"><a href="#写文章配置" class="headerlink" title="写文章配置"></a>写文章配置</h2><p>主题集成了个人插件hexo-tag-bili和hexo-tag-fancybox_img。其中hexo-tag-bili用来在文章或单页面中插入B站外链视频，使用语法如下：</p>
-<pre class=" language-md"><code class="language-md">{% bili video_id [page] %}
+<pre><code class="md">{% bili video_id [page] %}
 </code></pre>
 <p>详细使用教程详见<a href="https://github.com/honjun/hexo-tag-bili/blob/master/README-zh_cn.md" target="_blank" rel="noopener">hexo-tag-bili</a>。</p>
 <p>hexo-tag-fancybox_img用来在文章或单页面中图片，使用语法如下：</p>
-<pre class=" language-md"><code class="language-md">{% fb_img src [caption] %}
+<pre><code class="md">{% fb_img src [caption] %}
 </code></pre>
 <p>详细使用教程详见<a href="https://github.com/honjun/hexo-tag-fancybox_img/blob/master/README-zh_cn.md" target="_blank" rel="noopener">hexo-tag-fancybox_img</a></p>
 <h2 id="还有啥，一时想不起来……"><a href="#还有啥，一时想不起来……" class="headerlink" title="还有啥，一时想不起来……"></a>还有啥，一时想不起来……</h2><p>To be continued…</p>
 
-        </div>
-        <!-- .entry-content -->
-        <div class="single-reward">
-          <div class="reward-open">赏
-            <div class="reward-main">
-              <ul class="reward-row">
-                <li class="alipay-code"><img src="https://cdn.jsdelivr.net/gh/leeima/cdn/img/custom/donate/AliPayQR.jpg"></li>
-                <li class="wechat-code"><img src="https://cdn.jsdelivr.net/gh/leeima/cdn/img/custom/donate/WeChanQR.jpg"></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        <div style="text-align:center; width: 100%" class="social-share share-mobile" data-disabled="diandian, tencent"></div>
-        <footer class="post-footer">
-          <div class="post-lincenses"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="nofollow"><i class="fa fa-creative-commons" aria-hidden="true"></i> 知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a></div>
-          <div class="post-tags">
-          </div>
-          <div class="post-share">
-            <div class="social-share sharehidden share-component"></div>
-            <i class="iconfont show-share icon-forward"></i>
-          </div>
-        </footer><!-- .entry-footer -->
-      </article>
-      <!-- #post-## -->
-      <div class="toc" style="background: none;"></div>
-      <section class="post-squares nextprev">
-        
-        
-      </section>
+      <!-- .entry-content -->
       
 <div id="vcomments"></div>
 <script>
@@ -941,43 +891,43 @@ links:
 
 
 
+      <div class="single-reward">
+        <div class="reward-open">赏
+          <div class="reward-main">
+            <ul class="reward-row">
+              <li class="alipay-code"><img src="https://cdn.jsdelivr.net/gh/leeima/cdn/img/custom/donate/AliPayQR.jpg"></li>
+              <li class="wechat-code"><img src="https://cdn.jsdelivr.net/gh/leeima/cdn/img/custom/donate/WeChanQR.jpg"></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div style="text-align:center; width: 100%" class="social-share share-mobile" data-disabled="diandian, tencent"></div>
+      <footer class="post-footer">
+        <div class="post-lincenses"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="nofollow"><i class="fa fa-creative-commons" aria-hidden="true"></i> 知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a></div>
+        <div class="post-tags">
+        </div>
+        <div class="post-share">
+          <div class="social-share sharehidden share-component"></div>
+          <i class="iconfont show-share icon-forward"></i>
+        </div>
+      </footer><!-- .entry-footer -->
+    </article>
+      <!-- #post-## -->
       <section class="author-profile">
         <div class="info" itemprop="author" itemscope="" itemtype="https://schema.org/Person">
-          <a href="hojun.cn" class="profile gravatar"><img src="https://cdn.jsdelivr.net/gh/leeima/cdn/img/custom/avatar.jpg" itemprop="image" alt="hojun" height="70" width="70"></a>
+          <a href="/about/" class="profile gravatar"><img src="https://cdn.jsdelivr.net/gh/leeima/cdn/img/custom/avatar.jpg" itemprop="image" alt="-Lee" height="70" width="70"></a>
           <div class="meta">
             <span class="title">Author</span>
             <h3 itemprop="name">
-            <a href="hojun.cn" itemprop="url" rel="author">hojun</a>
+            <a href="https://leeima.github.io" itemprop="url" rel="author">-Lee</a>
             </h3>
           </div>
         </div>
         <hr>
-        <p><i class="iconfont icon-write"></i>一个好奇的人</p>
+        <p><i class="iconfont icon-write"></i>We will go ahead at last in the sunshine.</p>
       </section>
-    </main><!-- #main -->
   </div><!-- #primary -->
 </div>
-
-
-
-<!-- 来必力City版安装代码 -->
-<div id="lv-container" data-id="city" data-uid="MTAyMC81NjE0Ny8zMjYxMA==">
-    <script type="text/javascript">
-       (function(d, s) {
-           var j, e = d.getElementsByTagName(s)[0];
-    
-           if (typeof LivereTower === 'function') { return; }
-    
-           j = d.createElement(s);
-           j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
-           j.async = true;
-    
-           e.parentNode.insertBefore(j, e);
-       })(document, 'script');
-    </script>
-    <noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
-    </div>
-    <!-- City版安装代码已完成 -->
     </div>    
     <div class="ins-search">
     <div class="ins-search-mask"></div>
@@ -1118,7 +1068,7 @@ links:
 	<!-- <script src="https://cdn.jsdelivr.net/gh/wallleap/cdn/js/love.js"></script> -->
 	<!-- // 连线 -->
 	<script src="https://cdn.jsdelivr.net/gh/wallleap/cdn/js/canvas-nest.min.js"></script>
-	<script type="text/javascript" src="https://cdn.bootcss.com/canvas-nest.js/1.0.1/canvas-nest.min.js"></script> -->
+	<script type="text/javascript" src="https://cdn.bootcss.com/canvas-nest.js/1.0.1/canvas-nest.min.js"></script>
 	<!-- 样式二（飘动的彩带） -->
 	<script src="https://cdn.jsdelivr.net/gh/wallleap/cdn@latest/js/piao.js" type="text/javascript"></script>
 	 <!--背景切换-->
@@ -1475,6 +1425,8 @@ $(document).ready(function() {
   }
 </style>
 <meting-js
+
+    enable="false"
 
     id="2660651585"
 
@@ -1899,6 +1851,6 @@ $(document).ready(function() {
 
 <!-- left side bar.end -->
 
-<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginModelPath":"assets/","model":{"jsonPath":"/live2dw/assets/miku.model.json"},"display":{"position":"left","width":200,"height":300},"mobile":{"show":true},"rect":"opacity:0.3","log":false,"pluginJsPath":"lib/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
 
 </html>
