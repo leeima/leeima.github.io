@@ -6,10 +6,34 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="/"/>
-  <updated>2022-04-23T04:00:58.980Z</updated>
+  <updated>2022-04-26T15:31:37.612Z</updated>
   <id>/</id>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>My first blog post</title>
+    <link href="/2022/04/26/My-first-blog-post/"/>
+    <id>/2022/04/26/My-first-blog-post/</id>
+    <published>2022-04-26T15:29:00.000Z</published>
+    <updated>2022-04-26T15:31:37.612Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;第一篇博客
+        
+      
+    
+    </summary>
+    
+    
+      <category term="生活" scheme="/tags/%E7%94%9F%E6%B4%BB/"/>
+    
+  </entry>
   
   <entry>
     <title>Hexo-Theme-Sakura</title>
